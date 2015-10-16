@@ -16,6 +16,8 @@ We have included a simple postprocess barrel shader with our SDK. The HMD will s
 
 We should note that, because of the barrel shader, the mouse cursor doesn't map one-to-one with where the gaze appears to be in the final image. This is simply because we aren't running the mouse position through an algorithm to counteract the barrel distortion. On a calibrated headset, the barrel distortion is automatically handled and we do not see this kind of inaccuracy.
 
+It is recommended that this shader be used in Linear color space, not gamma. Go to `Edit > Project Settings > Player` and then under `Other Settings > Rendering > Color Space*` select "Linear". If you prefer to use gamma color space, you will probably want to modify the "Gamma Mod" value on the Barrel Distortion script of the FOVE Eye Camera prefab. Setting it to 1 will match gamma colorspace, setting it to 1.8 will generally match linear color space.
+
 ## Pre-Alpha Reminder ##
 
 Please note, this SDK is pre-alpha, which means that the features listed here aren't final yet. In fact, we hope that community members will take this initial Unity SDK and let us know what features they want added as they develop things with it. We encourage everyone to fork the project, make any additions you want, and if you have something you'd like to see in the final SDK, submit a pull request. We also plan to be as active as we can (considering the time difference and other tasks we're working on over here) in adding methods, fixes, etc...
