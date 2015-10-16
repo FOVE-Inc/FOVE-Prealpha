@@ -41,6 +41,7 @@ namespace UnityEngine
 			Vector3 GetPosition();
 			Vector3 GetLeftEyePoint();
 			Vector3 GetRightEyePoint();
+			bool IsBlinking();
 		}
 
 		private class FOVEState_NoHMD : IFOVEState
@@ -103,6 +104,11 @@ namespace UnityEngine
 			public Vector3 GetRightEyePoint()
 			{
 				return GetLeftEyePoint();
+			}
+
+			public bool IsBlinking()
+			{
+				return Input.GetMouseButton(0);
 			}
 		}
 
@@ -286,7 +292,7 @@ namespace UnityEngine
 			// TODO: position head is still being implemented
 			Vector3 position = _f_state.GetPosition();
 			_headPosition = position;
-            instance.gameObject.transform.localPosition = _headPosition;
+			instance.gameObject.transform.localPosition = _headPosition;
 
 			// rotate head
 			Quaternion quat = _f_state.GetRotation();
@@ -424,4 +430,3 @@ namespace UnityEngine
 		}
 	}
 }
- 
