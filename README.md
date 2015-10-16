@@ -2,6 +2,8 @@
 
 This Pre-Alpha SDK is intended to get us started in the discussion of what features everyone wants, and how they want to use the head set. It does not include the actual libraries required to run the headset, which are still being developed.
 
+To use this project in Unity, simply copy the project directory into your Assets folder inside your Unity project.
+
 In the FOVEInterface.cs file, there is an IFOVEState reference `_f_state` which at runtime is set to an instance of the FOVEState_NoHMD class. The IFOVEState interface is intended to represent all of the functionality required to interface directly between the C++ SDK and an object in Unity -- specifically, it gets eye gaze, head orientation, and head position information. The NoHMD version is what we use internally when building out new demos to rapidly prototype and check features before putting an actual headset on. The "live" version that interfaces with the C++ SDK has been omitted from this pre-alpha release for the sake of simplicity in getting it out.
 
 FOVEInterface also includes a number of static methods which are intended as helper methods for asking if, for example, the user's gaze collides with a given object. This is not yet a comprehensive set of methods, but rather the set that we've needed as we build out our own demos internally.
