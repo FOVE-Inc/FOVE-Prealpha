@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9c6bb767ff6031943b352fc85170d850
+timeCreated: 1438317946
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - barrelShader: {fileID: 4800000, guid: 06e63e1389d0e5147839e0ccd64c11e4, type: 3}
+  - _rTex: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
