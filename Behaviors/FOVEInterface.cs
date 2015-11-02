@@ -143,6 +143,7 @@ namespace UnityEngine
 		private static Vector3 _headPosition;
 		private static GameObject _leftCameraObject, _rightCameraObject;
 		private static Camera _leftCamera, _rightCamera;
+		private static bool _isBlinking;
 
 		/****************************************************************************************************\
 		 * Private utility functions																		*
@@ -310,6 +311,9 @@ namespace UnityEngine
 			eyePoint = _f_state.GetRightEyePoint();
 			_eyeRayRight = _rightCamera.ViewportPointToRay(eyePoint);
 
+			// determine blinking
+			_isBlinking = _f_state.IsBlinking();
+			
 			_hasUpdatedData = true;
 		}
 
@@ -399,6 +403,14 @@ namespace UnityEngine
 			return false;
 		}
 
+		/// <summary>
+		/// Returns whether the user is blinking -- that is, whether their eyes are closed.
+		/// </summary>
+		public static bool IsBlinking()
+		{
+			CheckDataConcurrency();
+			return _isBlinking;
+		}
 
 		public enum Eye
 		{
