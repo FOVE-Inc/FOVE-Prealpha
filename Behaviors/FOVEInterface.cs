@@ -296,11 +296,7 @@ namespace UnityEngine
 			instance.gameObject.transform.localPosition = _headPosition;
 
 			// rotate head
-			Quaternion quat = _f_state.GetRotation();
-			_headRotation.x = (float)quat.x;
-			_headRotation.y = (float)quat.y;
-			_headRotation.z = (float)quat.z;
-			_headRotation.w = (float)quat.w;
+			_headRotation = _f_state.GetRotation();
 			instance.gameObject.transform.localRotation = _headRotation;
 
 			// generate eye rays
